@@ -1,3 +1,39 @@
+.contentmca{
+  display: grid;
+  grid-template: 1fr /80.5% 20.75%;
+  height: 99%;
+  overflow-y: scroll;
+  position: absolute;
+  top: 0%;
+  column-rule: 1px solid rgb(75, 70, 74);
+  background: #000;
+  color: white;
+}
+.mynewcontentmca{
+  display: grid;
+  grid-template: 1fr /43.75% 56.25%;
+ height:100%;
+ overflow-y: scroll;
+position: absolute;
+}
+.zoomable-container{
+  overflow: hidden;
+  max-width: 100%; 
+  height: auto; 
+  border: 2px solid #ccc;
+  position: relative;
+}
+
+.zoomable-container__img {
+  width: 100%;
+  height : 100%;
+  object-fit: cover;
+}
+.zoomable-container__img:hover {
+  cursor: crosshair; /* Curseur en croix droite */
+}
+
+
 .portfolio{display: grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   grid-auto-rows: min-content;
@@ -9,6 +45,31 @@
   padding-top: 6.6vmax;
   padding-bottom: 6.6vmax;
 }
+.tankb{ margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;}
+.tank{ --s: 150px; /* control the size */
+  --g: 10px;  /* control the gap */
+  --f: 1.5;   /* control the scale factor */
+  grid-template-columns: repeat(2,auto);
+  aspect-ratio: 1;
+  width: calc(3*var(--s) + 3*var(--g));}
+  .tank > img {
+    width: 0;
+    height: 0;
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    filter: grayscale(80%);
+    transition: .35s linear;
+  }
+  .tank img:hover{
+    filter: grayscale(0);
+    width:  calc(var(--s)*var(--f));
+    height: calc(var(--s)*var(--f));
+  }
 .mcaclas p{
   font-size: 30px;
   margin: auto;
@@ -24,7 +85,6 @@ h1 a{font-size:7vw;
   margin-left: auto;
   margin-right: auto;
 }
-
 
 .wrape-abought{
   margin-top: 1em;
@@ -102,7 +162,7 @@ footer {
 }
   a{color: #ffffff;}
 body {
-  background-color:rgb(27, 27, 27);
+  background-color:rgb(9, 9, 9);
   font-family: 'n27regular';
   color: #ffffff;
 }
@@ -256,7 +316,7 @@ a{text-decoration: none;
   width:100%;
 }
 img{
-  height: 100%
+  width: 100%
 }
 .gif{
  position: absolute;
@@ -267,12 +327,23 @@ img{
 position: absolute;
 left: 50%;
 }
+/*MCA*/
+.imageholder{
+  display:grid;
+  grid-template: 45% /55%;
+  height: 90%;
+  overflow-y:scroll;
+  position: absolute;
+  top: 0%;
+  column-rule: 1px solid rgb(75, 70, 74);
+
+
+}
+
+
 
 
 /*fluid type*/
-
-
-
 .container {
   display: grid;
   grid-template: 1fr /62.5% 18.75% 18.75%;
@@ -285,6 +356,7 @@ background: #000;
 color :white;
 
 }
+
 .mynewclass{
   display: grid;
   grid-template: 1fr /45% 36.25% 18.75%;
@@ -375,7 +447,13 @@ margin-right: 30%;
   margin-top:8vmin;
   
 }
-
+.col2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top:8vmin;
+  gap:1em;
+  height:max-content;
+}
 .images {
     display: flex;
     height: 100%;
@@ -395,7 +473,9 @@ margin-right: 30%;
     align-items: center;
 
 }
-
+#tanque{   display: grid;
+size: auto;
+}
 #precedent, #suivant {
     position: absolute;
     font-size: 40px;  
@@ -450,8 +530,8 @@ margin-top:-100px;
   @media screen and (max-width: 1280px) {
     .wrape-abought{
     --num-cols:2;
-    margin: auto;
-    grid-gap: 1em;
+    margin: 2em;
+    grid-gap: 4em;
     }
     .links a {
       font-size: 4vw;
