@@ -3,17 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3d</title>
+    <title>Document</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div style="padding-top: 3em;">
+  <h1 style="right: 10px;position: absolute;font-size:10rem;">3DBOOK</h1>
+  <h2 style="right: 0;bottom: 0;position: absolute;font-size:5em; z-index: 1;">STUDIO<br>KIVIV</h2>
+<p style="left: 0;bottom: 0;position: absolute;font-size:1em;">campari_aperol:creation d'un flagship pour mise en rayon,<br> Diageo_tanqueray: flagship,<br>BEAM SUNTOTY: habillage dans les rayon</p>
 
-<li>
-    this 3d is interactive work on a PLV for Aperol this helm visulise how it would render inside the supermarket
-</li>
+    <style>
+      model-viewer {
+        height: 800px;
+        width: 100%;
+      }
+      </style>
 
 
-<div>
+
+
+<div id="swapper-first" style="display:block; padding:25px;">
+  <model-viewer 
+  src="ASSETS/3D/TANCRAY_LIGHT.glb "
+  camera-controls="false"
+  autoplay
+  class="reponsive"
+  id="image"
+  > 
+  </model-viewer>
+  </div>
+  <div id="swapper-other" style="display:none; padding:25px;">
+    <model-viewer 
+    src="ASSETS/3D/3d_cude.glb "
+    camera-controls="false"
+    autoplay
+    class="reponsive"
+    id="image"
+    > 
+    </model-viewer>
+  </div>
+  
+  <p style="text-align:center; font-weight:bold; font-style:italic;">
+    <a href="javascript:SwapDivsWithClick('swapper-first','swapper-other')">CHANGE MODEL 3D</a>
+    </p>
     
+    
+
+
+
+
+
+  <script type="text/javascript">
+    function SwapDivsWithClick(div1,div2)
+    {
+       d1 = document.getElementById(div1);
+       d2 = document.getElementById(div2);
+       if( d2.style.display == "none" )
+       {
+          d1.style.display = "none";
+          d2.style.display = "block";
+       }
+       else
+       {
+          d1.style.display = "block";
+          d2.style.display = "none";
+       }
+    }
+    </script>
+    
+    
+
+  <a href="project.html">
+    <div style="width: 376px; height: 106px; left: 45px; top: 29px; position: absolute"><span style="color: rgb(255, 255, 255); font-size: 64px;  font-weight: 400; line-height: 59.48px; word-wrap: break-word">O6</span><span style="color: #ffffff; font-size: 64px; font-weight: 400; line-height: 59.48px; word-wrap: break-word"> </span><span style="color: #ffffff; font-size: 20px;  font-weight: 400; line-height: 18.59px; word-wrap: break-word">ALL MY BLENDER</span></div>
+    </a>
 </body>
 </html>
